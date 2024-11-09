@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const taskController = require('./tasks/controller.js')
+const controller = require('./entity/controller.js')
 
 const PORT = 5000;
 
@@ -16,7 +16,7 @@ app.use(
 app.use(express.json())
 
 // Routes
-app.use('/tasks', taskController);
+app.use('/entity', controller);
 
 
 app.listen(PORT, () => console.log(`listing in port ${PORT}`))
