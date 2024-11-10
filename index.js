@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const controller = require('./entity/controller.js')
-
+const productsController = require('./product/controller')
 const PORT = 5000;
 
 const app = express();
@@ -16,7 +15,7 @@ app.use(
 app.use(express.json())
 
 // Routes
-app.use('/entity', controller);
+app.use('/product', productsController);
 
 
 app.listen(PORT, () => console.log(`listing in port ${PORT}`))
